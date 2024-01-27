@@ -4,4 +4,7 @@ export interface Meal {
     image: string;
     summary: string;
     creator: string;
+    creator_email: string;
+    instructions: string;
+    id: string;
 }

@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import classes from './page.module.css';
 import MealsGrid from '@/components/page-components/meals/meals-grid/meal-grid';
-import {getMeals} from '@/lib/meals';
+import { getMeals } from '@/lib/meals';
 import React, { ReactElement, Suspense } from 'react';
 import MealsLoadingPage from './loading';
+import { Meal } from '@/common/types';
 
 async function Meals(): Promise<React.ReactElement> {
-    const meals = await getMeals();
+    
+    const meals: Meal[] = await getMeals() as Meal[];
 return<MealsGrid meals={meals} />
 }
 
